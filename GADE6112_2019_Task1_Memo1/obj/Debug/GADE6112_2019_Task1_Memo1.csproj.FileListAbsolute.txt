@@ -1,0 +1,20 @@
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.exe.config
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.exe
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.pdb
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csprojAssemblyReference.cache
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.Form1.resources
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.Properties.Resources.resources
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csproj.GenerateResource.cache
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csproj.CoreCompileInputs.cache
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.exe
+D:\gd\c-sharp\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.pdb
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.exe.config
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.exe
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\bin\Debug\GADE6112_2019_Task1_Memo1.pdb
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csprojAssemblyReference.cache
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.Form1.resources
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.Properties.Resources.resources
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csproj.GenerateResource.cache
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.csproj.CoreCompileInputs.cache
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.exe
+D:\OneDrive - Vega School\Modules\GADE6112\POE\Tak2\GADE6112_2019_Task1_Memo1\GADE6112_2019_Task1_Memo1\obj\Debug\GADE6112_2019_Task1_Memo1.pdb
