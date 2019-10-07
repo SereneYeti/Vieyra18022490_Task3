@@ -9,13 +9,14 @@ using System.Drawing;
 namespace Vieyra18022490_Task2
 {
     public class GameEngine
-    {
+    {   //Class that deals with the processing of the in game logic and mechanics and implements everything.
         Map map = new Map();
         private int round;
         Random r = new Random();
         GroupBox grpMap;
         Timer tmr;
         Label resourcesLbl;
+        int mapHeight, mapWidth;
 
         ResourceBuilding resourceBuilding = new ResourceBuilding(5, 5, 10, 0, "RB", "Gold", 10, 100);
 
@@ -30,23 +31,35 @@ namespace Vieyra18022490_Task2
 
        
 
-        public GameEngine(int numUnits, TextBox txtInfo, GroupBox gMap, int numB, Timer timer, Label lbl)
-        {
+        public GameEngine(int numUnits, TextBox txtInfo, GroupBox gMap, int numB, Timer timer, Label lbl, int mW, int mH)
+        {   //Constructor
             grpMap = gMap;
             tmr = timer;
             resourcesLbl = lbl;
-            map = new Map(numUnits, txtInfo,numB);
+            mapWidth = mW;
+            mapHeight = mH;
+            map = new Map(numUnits, txtInfo,numB,mapWidth, mapHeight);
+            map.setMap(grpMap);
             map.Generate();
             map.Display(grpMap);
 
             round = 1; 
         }
 
+        public GameEngine(int mW, int mH,GroupBox gbxMap)
+        {
+            mapWidth = mW;
+            mapHeight = mH;
+            grpMap = gbxMap;
+            map = new Map(mapHeight, mapWidth);
+            map.setMap(grpMap);
+        }
+
         public GameEngine()
-        { }
+        { } //Constructor
 
         public void Update()
-        {
+        {   //Handling of all the ingame logic and processing occurs in this method.
             FactoryBuilding factoryBuilding = new FactoryBuilding(r.Next(0, 2), 2, 5, 5, 10, r.Next(0, 2), "FB");
 
             for (int i = 0; i < map.Units.Count; i++)
@@ -179,6 +192,7 @@ namespace Vieyra18022490_Task2
 
                 }
             }
+            
             map.Display(grpMap);
             round++;
             resourcesLbl.Text = resourceBuilding.GenerateResources(tmr);
@@ -217,20 +231,20 @@ namespace Vieyra18022490_Task2
 
         public void Save()
         {
-
+            //The save methods created in the map class are collected here to be called all together
             map.SaveUnits();
             map.SaveBuilding();
         }
 
         public void Read()
         {
-
+            //The read methods created in the map class are collected here to be called all together
             units = map.ReadUnits();
             buildings = map.ReadBuildings();
         }
 
         public void DisplayAfterRead(GroupBox groupBox)
-        {
+        {   //Handles re-desplaying of the previously saved information
             groupBox.Controls.Clear();
 
             foreach (Unit u in units)

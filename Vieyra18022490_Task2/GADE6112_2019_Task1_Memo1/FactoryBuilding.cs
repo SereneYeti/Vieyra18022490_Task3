@@ -12,7 +12,8 @@ namespace Vieyra18022490_Task2
 {
     
     class FactoryBuilding : Building
-    {
+    {   //Factory Building Class, Inherits from Building class. Handles Factory Buildings
+        //Variables Reflec Building class
         public bool Destroyed { get; set; }
 
         private int unitType;//0 for Melee 1 for Ranged
@@ -61,13 +62,14 @@ namespace Vieyra18022490_Task2
             set { base.symbol = value; }
         }
 
+        
         public override void Destruction()
-        {
+        {   //Handles the destruction of factory buildings
             Destroyed = true;
             Symbol = "X";
         }
         public FactoryBuilding(int uType, int prodSpeed, int xxpos, int yypos, int hhealth, int ffaction, string ssymbol)
-        {
+        {   //Constructor
             unitType = uType;
             productionSpeed = prodSpeed;
             XPos = xxpos;
@@ -77,10 +79,10 @@ namespace Vieyra18022490_Task2
             Symbol = ssymbol;
         }
         public FactoryBuilding()
-        { }
+        { } //Constructor
 
         public Unit SpawnUnit()
-        {
+        {   //Handles the construction of units
             if(Faction == 0)
             {
                 if (unitType == 0) //Melee Unit
@@ -112,7 +114,7 @@ namespace Vieyra18022490_Task2
         
 
         public override string ToString()
-        {
+        {   //Override of the ToString Funciton in order to return the required string output when needed with ease.
             string temp = "";
             temp += "Building: ";
             if(unitType == 0) { temp += "Melee Units"; } else { temp += "Ranged Units"; }

@@ -12,7 +12,8 @@ namespace Vieyra18022490_Task2
     
     public class MeleeUnit : Unit
     {
-
+        //Melee Unit class, Inherits from the Unit class
+        //Variables reflect Unit class
         //isDead field used for Death method
         public bool IsDead { get; set; }
 
@@ -80,7 +81,7 @@ namespace Vieyra18022490_Task2
 
         
         public MeleeUnit(int x, int y, int h, int s, int a, int f, string sy)
-        {
+        {   //Constructor
             XPos = x;
             YPos = y;
             Health = h;
@@ -94,16 +95,16 @@ namespace Vieyra18022490_Task2
             IsDead = false;
         }
         public MeleeUnit()
-        { }
+        { } //Constructor
 
         public override void Death()
-        {
+        {   //Handles the death of a unit
             symbol = "X";
             IsDead = true;
         }
 
         public override void Move(int dir)
-        {
+        {   //Handles the movements of the units
             switch (dir)
             {
                 case 0: YPos--; break; //North
@@ -113,9 +114,93 @@ namespace Vieyra18022490_Task2
                 default: break;
             }
         }
+        public void Pillage(Building building)
+        {   //Damaging of the buidlings
+            if(inRangeBulidngs(building))
+            {
+                if(building is ResourceBuilding)
+                {
+                    ((ResourceBuilding)building).Health = -Attack;
+
+                    if(((ResourceBuilding)building).Health <= 0)
+                    {
+                        building.Destruction();
+                    }
+                }
+                if (building is FactoryBuilding)
+                {
+                    ((FactoryBuilding)building).Health = -Attack;
+                    if (((FactoryBuilding)building).Health <= 0)
+                    {
+                        building.Destruction();
+                    }
+                }
+            }
+        }
+
+        public bool inRangeBulidngs(Building building)
+        {   //Checks for a Building in Range
+            int distance = 0;
+            int otherX = 0;
+            int otherY = 0;
+            if (building is FactoryBuilding)
+            {
+                otherX = ((FactoryBuilding)building).XPos;
+                otherY = ((FactoryBuilding)building).YPos;
+            }
+            else if (building is ResourceBuilding)
+            {
+                otherX = ((ResourceBuilding)building).XPos;
+                otherY = ((ResourceBuilding)building).YPos;
+            }
+
+            distance = Math.Abs(XPos - otherX) + Math.Abs(YPos - otherY);
+            if (distance <= AttackRange)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //public (Building, int) ClosestBuilding(List<Building> buildings)
+        //{   //Finds the closes unit around for combat
+        //    int shortest = 100;
+        //    Unit closest = this;
+        //    //Closest Unit and Distance                    
+        //    foreach (Building b in buildings)
+        //    {
+        //        if (b is FactoryBuilding && b != this)
+        //        {
+        //            FactoryBuilding otherB = (FactoryBuilding)b;
+        //            int distance = Math.Abs(this.XPos - otherB.XPos)
+        //                       + Math.Abs(this.YPos - otherB.YPos);
+        //            if (distance < shortest)
+        //            {
+        //                shortest = distance;
+        //                closest = otherB;
+        //            }
+        //        }
+        //        else if (b is ResourceBuilding && b != this)
+        //        {
+        //            ResourceBuilding otherRB = (ResourceBuilding)b;
+        //            int distance = Math.Abs(this.XPos - otherRB.XPos)
+        //                       + Math.Abs(this.YPos - otherRB.YPos);
+        //            if (distance < shortest)
+        //            {
+        //                shortest = distance;
+        //                closest = otherRB;
+        //            }
+        //        }
+
+        //    }
+        //    return (closest, shortest);
+        //}
 
         public override void Combat(Unit attacker)
-        {
+        {   //Handles the combat between two units
             if (attacker is MeleeUnit)
             {
                 Health = Health - ((MeleeUnit)attacker).Attack;
@@ -125,15 +210,15 @@ namespace Vieyra18022490_Task2
                 RangedUnit ru = (RangedUnit)attacker;
                 Health = Health - (ru.Attack - ru.AttackRange);
             }
-
+            
             if (Health <= 0)
-            {
+            {   //This is when the Death method is called as no health remaining has been confirmed
                 Death(); //DEATH !!!
             }
         }
 
         public override bool InRange(Unit other)
-        {
+        {   //Checks wether units are in range of each other so they can fight
             int distance = 0;
             int otherX = 0;
             int otherY = 0;
@@ -160,7 +245,7 @@ namespace Vieyra18022490_Task2
         }
 
         public override (Unit, int) Closest(List<Unit> units)
-        {
+        {   //Finds the closes unit around for combat
             int shortest = 100;
             Unit closest = this;
             //Closest Unit and Distance                    
@@ -194,7 +279,7 @@ namespace Vieyra18022490_Task2
         }
 
         public override string ToString()
-        {
+        {   //Override of the ToString Funciton in order to return the required string output when needed with ease. 
             string temp = "";
             temp += "Melee:";
             temp += Name;

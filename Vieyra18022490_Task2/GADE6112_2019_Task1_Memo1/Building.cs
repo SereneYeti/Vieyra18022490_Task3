@@ -8,7 +8,8 @@ namespace Vieyra18022490_Task2
 {
     [Serializable]
     public abstract class Building
-    {
+    {   //Abstract class with no code implemented
+        //Used for the sake of re-use and inheritance
         protected int xPos;
         protected int yPos;
         protected int health;

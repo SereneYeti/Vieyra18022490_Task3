@@ -12,7 +12,8 @@ namespace Vieyra18022490_Task2
 {
     
     class ResourceBuilding : Building
-    {
+    {   //Recourse Building Class, Inherits from Building class. Handles Resource Buildings
+        //Variables Reflec Building class
         public bool Destroyed { get; set; }
 
         
@@ -55,7 +56,7 @@ namespace Vieyra18022490_Task2
         int resourcesGenerated;
 
         public ResourceBuilding(int xxPos, int yyPos, int hHealth, int fFaction, string sSymbol, string rType, int rPerRound, int rRemaining)
-        {
+        {   //Constructor
             XPos = xxPos;
             YPos = yyPos;
             Health = hHealth;
@@ -67,16 +68,17 @@ namespace Vieyra18022490_Task2
 
         }
         public ResourceBuilding()
-        { }
+        { } //Constructor
 
+        
         public override void Destruction()
-        {
+        {   //Handles the destruction of resource buildings
             Destroyed = true;
             Symbol = "X";
         }
 
         public string GenerateResources(Timer tmr)
-        {
+        {   //Handels the generation of resources
             string temp = "";
             if(tmr.Enabled == true)
             {                
@@ -92,7 +94,7 @@ namespace Vieyra18022490_Task2
         }
 
         public override string ToString()
-        {
+        {   //Override of the ToString Funciton in order to return the required string output when needed with ease.
             string temp = "";
             temp += "Building: ";
             temp += resourceType;
@@ -104,7 +106,7 @@ namespace Vieyra18022490_Task2
         }
 
         //public override void Save()
-        //{
+        //{   
         //    Map map = new Map();
         //    List<Building> building = map.Buildings;
         //    //Saving to the DAT file

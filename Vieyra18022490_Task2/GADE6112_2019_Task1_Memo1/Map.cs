@@ -12,14 +12,14 @@ namespace Vieyra18022490_Task2
 {
     [Serializable]
     public class Map
-    {
+    {   //Class that deals with the game map and the generation of units and buildings
         List<Unit> units;
         List<Building> buildings;
         Random r = new Random();
         int numUnits = 0;
         TextBox txtInfo;
         int numBuildings;
-        int mapWidth, mapHight;
+        int mapWidth, mapHeight;
 
         public List<Unit> Units
         {
@@ -34,21 +34,34 @@ namespace Vieyra18022490_Task2
         }
 
         public Map(int n, TextBox txt, int nb, int mW, int mH)
-        {
+        {   //Constructor
             units = new List<Unit>();
             buildings = new List<Building>();
             numUnits = n;
             txtInfo = txt;
             numBuildings = nb;
             mapWidth = mW;
-            mapHight = mH;
+            mapHeight = mH;
+        }
+
+        public Map(int mW, int mH)
+        {
+            mapWidth = mW;
+            mapHeight = mH;
         }
 
         public Map()
-        { }
+        { } //Constructor
 
-        public void Generate()
+        public void setMap(GroupBox grpMap)
         {
+            grpMap.Height = mapHeight;
+            grpMap.Width = mapWidth;
+        }
+        
+        public void Generate()
+        {   //Method that generates units and buildings                      
+            
             for(int i = 0; i < numUnits; i++)
             {
                if(r.Next(0,2) == 0) //Generate Melee Unit
@@ -98,7 +111,7 @@ namespace Vieyra18022490_Task2
         }
 
         public void Display(GroupBox groupBox)
-        {
+        {   //Handles the display of the game map
             groupBox.Controls.Clear();
             foreach(Unit u in units)
             {
@@ -176,7 +189,7 @@ namespace Vieyra18022490_Task2
         }
 
         public void Building_Click(object sender, EventArgs e)
-        {
+        {   //Handles what happens when you click on a building
             int x, y;
             Button btn = (Button)sender;
             x = btn.Location.X / 20;
@@ -221,7 +234,7 @@ namespace Vieyra18022490_Task2
         }
 
         public void Unit_Click(object sender, EventArgs e)
-        {
+        {   //Handles what happens when you click on a unit
             int x, y;
             Button b = (Button)sender;
             x = b.Location.X / 20;
@@ -250,7 +263,7 @@ namespace Vieyra18022490_Task2
         }
 
         public void SaveUnits()
-        {
+        {   //Handes the saving of Units
             
             //Saving to the DAT file
             BinaryFormatter bf = new BinaryFormatter();
@@ -272,7 +285,7 @@ namespace Vieyra18022490_Task2
         }
 
         public  List<Unit> ReadUnits()
-        {
+        {   //Handles the reading of files to re-generate the previously saved units
             //Reading from the DAT file
             List<Unit> temp = new List<Unit>();
             BinaryFormatter bf = new BinaryFormatter();
@@ -291,7 +304,7 @@ namespace Vieyra18022490_Task2
         }
 
         public void SaveBuilding()
-        {
+        {   //Handles the saving of Buildings
 
             //Saving to the DAT file
 
@@ -315,7 +328,7 @@ namespace Vieyra18022490_Task2
         }
 
         public List<Building> ReadBuildings()
-        {
+        {   //Handles the reading of files to re-generate the previously saved buildings
             //Reading from the DAT file
             List<Building> temp = new List<Building>();
             BinaryFormatter bf = new BinaryFormatter();
